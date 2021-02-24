@@ -11,19 +11,16 @@ function maxChar(str) {
   let maxChar = '';
 
   for (char of str) {
-    if (charMap[char]) {
-      charMap[char]++;
-    } else {
-      charMap[char] = 1;
-    }
+    charMap[char] = charMap[char] ? charMap[char]++ : 1;
   }
 
-  for (let char in charMap) {
+  Object.keys(charMap).forEach(char => {
     if (charMap[char] > max) {
       max = charMap[char]; //The value
       maxChar = char; //The key
     }
-  }
+  });
+
   return maxChar;
 }
 
