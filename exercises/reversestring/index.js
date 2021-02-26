@@ -16,7 +16,7 @@ function reverse(str) {
 //   return str.split('').reverse().join('');
 // }
 
-// Solution 2
+// Solution 2 - O(n   ) complexity - Linear runtime.
 
 // function reverse(str) {
 //   let reversed = '';

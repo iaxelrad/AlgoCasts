@@ -39,6 +39,8 @@ function steps(n, row = 0, stair = '') {
 
 module.exports = steps;
 
+// O(n^2) complexity - quadratic runtime.
+
 // function steps(n) {
 //   for (let row = 0; row < n; row++) {
 //     let stair = '';
