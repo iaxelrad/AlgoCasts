@@ -26,11 +26,14 @@ function steps(n, row = 0, stair = '') {
     return steps(n, row + 1);
   }
 
-  if (stair.length <= row) {
-    stair += '#';
-  } else {
-    stair += ' ';
-  }
+  // if (stair.length <= row) {
+  //   stair += '#';
+  // } else {
+  //   stair += ' ';
+  // }
+
+  stair.length <= row ? (stair += '#') : (stair += ' ');
+
   steps(n, row, stair);
 }
 
