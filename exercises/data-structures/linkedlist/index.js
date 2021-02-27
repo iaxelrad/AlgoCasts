@@ -135,6 +135,16 @@ class LinkedList {
     // previous.next = null;
     this.removeAt(this.size() - 1);
   };
+
+  forEach = callback => {
+    let node = this.head;
+    let counter = 0;
+    while (node) {
+      callback(node, counter);
+      node = node.next;
+      counter++;
+    }
+  };
 }
 
 module.exports = { Node, LinkedList };
