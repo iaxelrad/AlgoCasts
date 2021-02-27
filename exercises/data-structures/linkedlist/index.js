@@ -13,9 +13,35 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
-  insertFirst = (data) => {
+
+  insertFirst = data => {
     this.head = new Node(data, this.head);
-  }
- }
+  };
+
+  size = () => {
+    let counter = 0;
+    let node = this.head;
+    while (node) {
+      counter++;
+      node = node.next;
+    }
+    return counter;
+  };
+
+  getFirst = () => {
+    return this.head;
+  };
+
+  getLast = () => {
+    let node = this.head;
+    if (!this.head) {
+      return null;
+    }
+    while (node.next) {
+      node = node.next;
+    }
+    return node;
+  };
+}
 
 module.exports = { Node, LinkedList };
