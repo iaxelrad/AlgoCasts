@@ -34,12 +34,19 @@ class Tree {
     const nodes = [this.root];
     while (nodes.length) {
       const node = nodes.shift(); //takes out the first element from nodes array.
-      nodes.push(...node.children); //takes every element of node.children and puts them in nodes.
+      nodes.push(...node.children); //takes every element of node.children and puts them in the end of nodes array.
       fn(node);
     }
   };
 
-  // traverseDF = (fn) => {};
+  traverseDF = fn => {
+    const nodes = [this.root];
+    while (nodes.length) {
+      const node = nodes.shift(); //takes out the first element from nodes array.
+      nodes.unshift(...node.children); //takes every element of node.children and puts them in the beginning of nodes array.
+      fn(node);
+    }
+  };
 }
 
 module.exports = { Tree, Node };
